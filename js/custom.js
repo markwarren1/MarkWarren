@@ -18,6 +18,6 @@ var userFeed = new Instafeed({
     get: 'user',
     target: "div2",
     resolution: 'high_resolution',
-    accessToken: 'IGQVJYYU9GZAVlmdHFtVUNMelZAJMjNUS29WbWtUajY2SkFPTGtiTjVCTjNDaXRZAUUpxZA2pPQ3hWS3NUYk0wZAHFoYkJseVk3YzJkYkQtR2R5aU9TVUtrNV9jeDVCUy12ZADJzZAUYxZAGRkRWpyUkpqQkNBSQZDZD'
+    accessToken: ''
 });
 userFeed.run();
