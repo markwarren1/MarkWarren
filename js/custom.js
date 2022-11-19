@@ -1,4 +1,8 @@
+//load evn variables
+require('dotenv').config();
+
 //toggling between social media views
+
 function toggle(e){
     const button = e.target;
     const divId = button.dataset.targetId;
@@ -18,6 +22,6 @@ var userFeed = new Instafeed({
     get: 'user',
     target: "div2",
     resolution: 'high_resolution',
-    accessToken: ''
+    accessToken: process.env.API_KEY,
 });
 userFeed.run();
