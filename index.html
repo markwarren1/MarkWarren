@@ -7,69 +7,88 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/customstyles.css">
 </head>
 <body>
     <!-- persisting header -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="index.html">MW</a>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="about.html">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="projects.html">Projects</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="resume.html">Resume</a>
-                  </li>
-                </ul>
-              </div>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="ml-auto nav-item">
+                            <a class="nav-link text-white" href="index.html">MW</a>
+                        </li>
+                        <li class="ml-auto nav-item">
+                            <a class="nav-link text-white" href="about.html">About</a>
+                        </li>
+                        <li class="ml-auto nav-item">
+                            <a class="nav-link text-white" href="projects.html">Projects</a>
+                        </li>
+                        <li class="ml-auto nav-item">
+                            <a class="nav-link text-white" href="resume.html">Resume</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
     </header>
     <!-- Main homepage -->
     <main>
-      <div class="container-border border">
-        <div class="justify-content-center">
-          <img src="assets/smallLogo_60.png" class="mx-auto d-block" alt="logo">
-        </div>
-        <div class="row">
-            <div class="col-6"> <!-- make column breaks responsive -->
-                <div class="my-3">
-                    <h1>Mark<br>Warren</h1>
-                    <p>Welcome! I am a Christian who enjoys computers! I am not specialized in any particular aspect of computer science, and I plan on taking these skills wherever the Lord leads me.</p>
+        <div class="container">
+            <div class="image-wrapper p-2">
+                <img src="assets/smallLogo_60.png" class="img-fluid mx-auto d-block" style="max-width: 80%;" alt="logo">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-6">
+                    <div class="my-3">
+                        <h1 class="text-center">Mark<br>Warren</h1>
+                        <p class="text-center">Welcome! I am a Christian who enjoys computers! I am not specialized in any particular aspect of computer science, and I plan on taking these skills wherever the Lord leads me.</p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                    <div class="d-flex justify-content-center my-3 btn-group-lg">
+                        <i id="twitter-btn" class="bi bi-twitter btn-lg btn-primary" data-target-id="div1" onclick="handleButtonClick(event)"></i>
+                        <i id="instagram-btn" class="bi bi-instagram btn-lg" data-target-id="div2" onclick="handleButtonClick(event)"></i>
+                        <i id="linkedin-btn" class="bi bi-linkedin btn-lg" data-target-id="div3" onclick="handleButtonClick(event)"></i>
+                    </div>
+
+                    <div id="div1" class="content active">
+                        <a class="twitter-timeline" href="https://twitter.com/Mark50815576?ref_src=twsrc%5Etfw">Tweets by Mark50815576</a>
+                    </div>
+
+                    <div id="div2" class="content">
+                        <div class="instafeed-container"></div>
+                        <p class="bold text-center">Server Hosting Required to house API(s)</p>
+                    </div>
+
+                    <div id="div3" class="content">
+                        <p class="bold text-center">Server Hosting Required to house API(s)</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-6">
-              <div class="d-flex justify-content-center my-3 btn-group-lg">
-                <button type = "button" class= "btn btn-primary" data-target-id="div1" onclick="toggle(event)"><i class="fa-lg bi bi-twitter"></i></button>
-                <button type = "button" class= "btn" data-target-id="div2" onclick="toggle(event)"><i class="fa-lg bi bi-instagram"></i></button>
-                <button type = "button" class= "btn" data-target-id="div3" onclick="toggle(event)"><i class="fa-lg bi bi-linkedin"></i></button>
-              </div>
-              
-              <div id="div1" class="toggle d-none d-block">
-                <a class="twitter-timeline" href="https://twitter.com/Mark50815576?ref_src=twsrc%5Etfw">Tweets by Mark50815576</a>
-              </div>
-              <div id="div2" class="toggle d-none">
-                <div class="instafeed-container"></div>
-                <p class="bold text-center">Server Hosting Required to house api(s)</p>
-              </div>
-              <div id="div3" class="toggle d-none">
-                <p class="bold text-center">Server Hosting Required to house api(s)</p>
-              </div>
-            </div>
         </div>
-      </div>
     </main>
+
+
     <!-- footer -->
     <footer class="footer">
         <div class="container-fluid bg-dark">
-          <p class="text-white text-center my-0">&copy; 2022 Mark Warren</p>
+            <div class="row justify-content-between align-items-center py-4">
+                <div class="col-auto">
+                    <p class="text-white mb-0">&copy; 2022 Mark Warren</p>
+                </div>
+                <div class="col-auto">
+                    <a href="mailto:gerpop321@gmail.com" class="btn btn-primary mr-3"><i class="bi bi-envelope"></i></a>
+                    <a href="https://github.com/markwarren1" class="btn btn-secondary"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

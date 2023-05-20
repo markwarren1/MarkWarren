@@ -3,25 +3,62 @@ require('dotenv').config();
 
 //toggling between social media views
 
-function toggle(e){
-    const button = e.target;
-    const divId = button.dataset.targetId;
-    const div = document.getElementById(divId);
-    const boxes = document.querySelectorAll('.toggle')
+function handleButtonClick(event) {
+      var targetId = event.target.getAttribute("data-target-id");
+      var contentElements = document.getElementsByClassName("content");
+      var buttons = document.querySelectorAll(".btn-lg");
 
-    if(div.classList.contains("d-block")) { return }
-        boxes.forEach(box => {
-            box.classList.remove("d-block")
+      for (var i = 0; i < contentElements.length; i++) {
+        contentElements[i].classList.remove("active");
+      }
+
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].classList.remove("btn-primary");
+      }
+
+      document.getElementById(targetId).classList.add("active");
+      event.target.classList.add("btn-primary");
+
+      if (targetId === "div2") {
+        // Fetch and display Instagram content
+        fetchInstagramContent();
+      }
+    }
+
+    function fetchInstagramContent() {
+      axios
+        .get("https://api.example.com/instagram")
+        .then(function (response) {
+          var instafeedContainer = document.getElementsByClassName("instafeed-container")[0];
+          instafeedContainer.innerHTML = response.data;
         })
-        // div.classList.remove("d-none");
-        div.classList.add("d-block") 
-}
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
 
-//to get instagram (api call)
-var userFeed = new Instafeed({
-    get: 'user',
-    target: "div2",
-    resolution: 'high_resolution',
-    accessToken: process.env.API_KEY,
-});
-userFeed.run();
+    function fetchInstagramContent() {
+      axios
+        .get("https://api.example.com/instagram")
+        .then(function (response) {
+          var instafeedContainer = document.getElementsByClassName("instafeed-container")[0];
+          instafeedContainer.innerHTML = response.data;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+function fetchInstagramContent() {
+      axios
+        .get("https://api.example.com/instagram")
+        .then(function (response) {
+          var instafeedContainer = document.getElementsByClassName("instafeed-container")[0];
+          instafeedContainer.innerHTML = response.data;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+
