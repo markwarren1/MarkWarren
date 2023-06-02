@@ -1,5 +1,4 @@
-//load evn variables
-require('dotenv').config();
+
 
 //toggling between social media views
 function handleButtonClick(event) {
@@ -19,5 +18,3 @@ function handleButtonClick(event) {
       event.target.classList.add("btn-primary");
 
     }
-
-
