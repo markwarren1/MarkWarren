@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/customstyles.css">
     <link rel="icon" href="assets/smallLogo_32x32.png" type="image/png">
 </head>
-<body>
+<body onload="getCommitTime1(); getCommitTime2();">
     <!-- persisting header -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-2">
@@ -38,25 +38,24 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="pb-5">
     <div class="text-center my-4">
       <h2>Works Hosted on Github</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum nam delectus quo!</p>
+      <p>These are some projects that I have either aided in my learning or I have just had fun with!</p>
     </div>
     <div class="container-fluid">
-      <div class="row justify-content-center my-5">
-        <div class="col-1-xs col-3-md col-4-lg d-flex">
+      <div class="row justify-content-center my-2">
+        <div class="col-1-xs col-3-md col-4-lg d-flex my-3">
           <!-- insert card here -->
-          <div class="card mx-4" style="width: 18rem;">
+          <div class="card mx-4" style="width: 18rem; ">
             <img class="card-img-top" src="assets/javaIcon.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title text-center">Tic-Tac-Toe</h5>
               <p class="card-text text-center">Play tic-tac-toe against a computer using recursively weighted decision-making.</p>
             </div>
             <ul class="list-group list-group-flush text-center">
-              <li class="list-group-item">Status: V1.0 *no GUI*</li>
               <li class="list-group-item">Frameworks: None</li>
-              <li class="list-group-item"><span id="last-updated"></span></li>
+              <li class="list-group-item" id="tictactoe">Last Updated: </li>
             </ul>
             <div class="card-body text-center">
               <a href="https://github.com/markwarren1/Tic-Tac-ToeGame" class="card-link">Check Out</a>
@@ -64,7 +63,7 @@
           </div>
           <!-- end card -->
         </div>
-        <div class="col-1-xs col-3-md col-4-lg d-flex">
+        <div class="col-1-xs col-3-md col-4-lg d-flex my-3">
           <!-- insert card here -->
           <div class="card mx-4" style="width: 18rem;">
             <img class="card-img-top" src="assets/html-css-final.jpg" alt="Card image cap">
@@ -73,9 +72,8 @@
               <p class="card-text text-center">This website is work towards an elegant and concise means of sharing myself and my work.</p>
             </div>
             <ul class="list-group list-group-flush text-center">
-              <li class="list-group-item">Status: In Development</li>
               <li class="list-group-item">Frameworks: Bootstrap</li>
-              <li class="list-group-item">Started: 11/11/2022</li>
+              <li class="list-group-item" id="personalWebpage">Last Updated: </li>
             </ul>
             <div class="card-body text-center">
               <a href="https://github.com/markwarren1/MarkWarren" class="card-link">Check Out</a>
